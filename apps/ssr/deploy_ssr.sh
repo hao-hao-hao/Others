@@ -3,16 +3,19 @@
 
 install_ssr(){
 	cd /root/
+	echo 'downloading the ssr and set up cymysql'
+	apt install unzip
 	wget -c https://github.com/Hao-Luo/Others/raw/master/apps/ssr/ssr.zip && unzip ssr.zip && cd shadowsocksr &&  ./setup_cymysql.sh 
-	stty erase '^H' && read -p " mysql-server address:" mysql-server
+	echo 'setting up the ssr'
+	stty erase '^H' && read -p " mysql-server address:" mysqlserver
 	stty erase '^H' && read -p " mysql-server username:" username
 	stty erase '^H' && read -p " mysql-server password:" password
 	stty erase '^H' && read -p " ssr node id:" nodeid
-	sed -i -e "s/server/$mysql-server/g" usermysql.json
+	sed -i -e "s/server/$mysqlserver/g" usermysql.json
 	sed -i -e "s/username/$username/g" usermysql.json
 	sed -i -e "s/password/$password/g" usermysql.json
 	sed -i -e "s/node/$nodeid/g" usermysql.json
-	
+	echo 'setting up the ssr as service in systemd'
 	cp ssr.service /etc/systemd/system/ssr.service
 	systemctl daemon-reload
 	systemctl start ssr.service
