@@ -9,11 +9,11 @@ install_ssr(){
 	echo 'setting up the ssr'
 	stty erase '^H' && read -p " mysql-server address:" mysqlserver
 	stty erase '^H' && read -p " mysql-server username:" username
-	stty erase '^H' && read -p " mysql-server password:" password
+	stty erase '^H' && read -p " mysql-server password:" pwd
 	stty erase '^H' && read -p " ssr node id:" nodeid
 	sed -i -e "s/server/$mysqlserver/g" usermysql.json
 	sed -i -e "s/username/$username/g" usermysql.json
-	sed -i -e "s/password/$password/g" usermysql.json
+	sed -i -e "s/pwd/$pwd/g" usermysql.json
 	sed -i -e "s/nodeid/$nodeid/g" usermysql.json
 	echo 'setting up the ssr as service in systemd'
 	cp ssr.service /etc/systemd/system/ssr.service
