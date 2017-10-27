@@ -14,7 +14,7 @@ install_ssr(){
 	sed -i -e "s/server/$mysqlserver/g" usermysql.json
 	sed -i -e "s/username/$username/g" usermysql.json
 	sed -i -e "s/password/$password/g" usermysql.json
-	sed -i -e "s/node/$nodeid/g" usermysql.json
+	sed -i -e "s/nodeid/$nodeid/g" usermysql.json
 	echo 'setting up the ssr as service in systemd'
 	cp ssr.service /etc/systemd/system/ssr.service
 	systemctl daemon-reload
