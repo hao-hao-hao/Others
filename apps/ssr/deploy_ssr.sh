@@ -4,8 +4,7 @@
 install_ssr(){
 	cd /root/
 	echo 'downloading the ssr and set up cymysql'
-	apt install unzip
-	wget -c https://github.com/Hao-Luo/Others/raw/master/apps/ssr/ssr.zip && unzip ssr.zip && cd shadowsocksr &&  ./setup_cymysql.sh 
+	wget -c https://github.com/Hao-Luo/Others/raw/master/apps/ssr/ssr.tar.gz && tar -zxvf ssr.tar.gz && cd shadowsocksr &&  ./setup_cymysql.sh 
 	echo 'setting up the ssr'
 	stty erase '^H' && read -p " mysql-server address:" mysqlserver
 	stty erase '^H' && read -p " mysql-server username:" username
