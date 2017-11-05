@@ -1,3 +1,5 @@
+Support System with Systemd like CentOS 7 and Ubuntu.
+
 How to use:
 
 
