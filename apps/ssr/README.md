@@ -9,3 +9,6 @@ wget -N --no-check-certificate https://raw.githubusercontent.com/Hao-Luo/Others/
 
 
 BBR sh file is from github.com/teddysun
+
+
+I have updated all the notes to english now.
