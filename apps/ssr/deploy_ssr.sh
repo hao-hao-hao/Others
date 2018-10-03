@@ -30,7 +30,7 @@ open_bbr(){
 }
 
 echo ' 1. Install SSR 2. Open BBR'
-stty erase '^H' && read -p " 请输入数字 [1-2]:" num
+stty erase '^H' && read -p " Please enter digit [1-2]:" num
 case "$num" in
 	1)
 	install_ssr
@@ -39,6 +39,6 @@ case "$num" in
 	open_bbr
 	;;
 	*)
-	echo "请输入正确数字 [1-2]"
+	echo "Please enter digit [1-2]"
 	;;
 esac
